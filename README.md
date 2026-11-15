@@ -117,15 +117,3 @@ Pour reproduire les tests HTTP sans envoyer de requête à Google :
 3. Dans un troisième terminal : `python3 tests/verifier_rest.py`.
 4. Arrêter les serveurs avec Ctrl+C, puis supprimer `GEMINI_API_ENDPOINT`
    de l’environnement avant tout lancement avec une vraie clé.
-
-## Éléments à mettre dans le mail de fin de TP
-
-Le TP demande de mentionner dans le texte du mail :
-- URL préparatoire : `http://localhost:18085/tp3-rest-chafii/api/guide/lieu/Nice`.
-- Affichage observé du tableau : `["Nice"]`.
-- Solution bonus : paramètre de requête `nb`, 2 par défaut.
-- URL bonus : `http://localhost:18085/tp3-rest-chafii/api/guide/lieu/Paris?nb=4`.
-- Réponse réelle de Gemini : reproduite ci-dessus (HTTP 200, Paris, 4 visites).
-
-Le dépôt GitHub est public : https://github.com/Camelchafii691/tp3-rest-chafii.
-Aucun mail n’a été envoyé.
