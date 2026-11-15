@@ -92,10 +92,17 @@ La racine de l’application peut afficher 404 car elle ne contient pas de page 
   invalides, le JSON invalide, le mauvais nombre de visites et l’erreur fournisseur.
 - Sans clé Gemini : réponse 503 vérifiée séparément.
 
-**Aucun appel à Gemini réel n’a été effectué : aucune clé n’était fournie.**
-Les données « Visite simulee » servent uniquement aux vérifications locales.
-Le test réel avec la clé du compte reste à effectuer avant d’envoyer une réponse
-Gemini à l’enseignant. Le prix fourni par le modèle est une estimation.
+Un appel réel à **Gemini 3.5 Flash** a été vérifié le 15 novembre 2026 :
+`GET /api/guide/lieu/Paris?nb=4` a retourné HTTP 200 et quatre visites.
+La clé est conservée uniquement dans `.env` (permissions 600), exclu de Git.
+Les données « Visite simulee » restent réservées aux tests automatisés locaux.
+Le prix fourni par le modèle est une estimation.
+
+Réponse réelle observée :
+
+```json
+{"ville_ou_pays":"Paris","endroits_a_visiter":["La Tour Eiffel","Le Musée du Louvre","La Cathédrale Notre-Dame de Paris","La Basilique du Sacré-Cœur"],"prix_moyen_repas":"20 €"}
+```
 
 Pour reproduire les tests HTTP sans envoyer de requête à Google :
 
@@ -118,7 +125,7 @@ Le TP demande de mentionner dans le texte du mail :
 - Affichage observé du tableau : `["Nice"]`.
 - Solution bonus : paramètre de requête `nb`, 2 par défaut.
 - URL bonus : `http://localhost:18085/tp3-rest-chafii/api/guide/lieu/Paris?nb=4`.
-- Réponse réelle de Gemini : à récupérer après configuration de la clé et lancement.
+- Réponse réelle de Gemini : reproduite ci-dessus (HTTP 200, Paris, 4 visites).
 
 Le dépôt GitHub est public : https://github.com/Camelchafii691/tp3-rest-chafii.
 Aucun mail n’a été envoyé.
