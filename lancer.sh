@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")"
+# Configuration locale créée par configurer-gemini.sh et exclue de Git.
+if [ -f .env ]; then source .env; fi
 
 if [ -z "${JAVA_HOME:-}" ] && [ -x /usr/libexec/java_home ]; then
   JAVA_HOME=$(/usr/libexec/java_home -v 25 2>/dev/null || true)

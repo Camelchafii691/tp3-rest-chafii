@@ -25,11 +25,13 @@ Prérequis : JDK 25, Maven (ou celui d’IntelliJ), connexion Internet pour les
 dépendances et une clé Gemini. Les versions Maven reprennent celles du TP 2.
 
 ```bash
-export GEMINI_MODEL='nom-du-modele-accessible-a-ton-compte'
+./configurer-gemini.sh
 ./lancer.sh
 ```
 
-Le script demande la clé Gemini avec une saisie masquée. On peut aussi définir
+Le script de configuration demande la clé Gemini avec une saisie masquée et le nom
+du modèle. Il les conserve dans `.env`, accessible seulement au propriétaire et
+exclu de Git. `lancer.sh` charge ce fichier automatiquement. On peut aussi définir
 `GEMINI_API_KEY` ou `GEMINI_KEY` dans l’environnement avant le lancement.
 Ne jamais enregistrer une clé dans Git. `GEMINI_MODEL` est obligatoire afin de
 choisir un modèle réellement disponible pour le compte utilisé.
@@ -118,5 +120,5 @@ Le TP demande de mentionner dans le texte du mail :
 - URL bonus : `http://localhost:18085/tp3-rest-chafii/api/guide/lieu/Paris?nb=4`.
 - Réponse réelle de Gemini : à récupérer après configuration de la clé et lancement.
 
-Le dépôt GitHub est privé : donner accès à l’enseignant si nécessaire.
+Le dépôt GitHub est public : https://github.com/Camelchafii691/tp3-rest-chafii.
 Aucun mail n’a été envoyé.
