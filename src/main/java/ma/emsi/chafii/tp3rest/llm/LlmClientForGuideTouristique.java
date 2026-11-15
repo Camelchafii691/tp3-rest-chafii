@@ -11,8 +11,8 @@ import java.time.Duration;
 public class LlmClientForGuideTouristique {
     private volatile GuideTouristique guide;
 
-    public String visiter(String lieu) {
-        return service().visiter(lieu);
+    public String visiter(String lieu, int nombre) {
+        return service().visiter(lieu, nombre);
     }
 
     private synchronized GuideTouristique service() {
